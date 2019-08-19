@@ -21,10 +21,18 @@ def process(filename="day2.txt"):
         max_key = dict()
         for key in letters:
             max_key[key] = max(letters[key])
-        
-        print(max([max_key[key] for key in max_key]))
 
-        print(max_key)
+        key1 = max(max_key, key=lambda k: max_key[k])
+        max_key.pop(key1)
+        key2 = max(max_key, key=lambda k: max_key[k])
+
+        res = ''
+        i = 0
+        for i in range(0, len(key1)):
+            if key1[i] == key2[i]:
+                res += key1[i]
+                
+        print(res)
 
 
 process()
