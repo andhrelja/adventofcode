@@ -1,2 +1,5 @@
 .vs/
+.vscode/
 __pycache__/
+
+base.py
