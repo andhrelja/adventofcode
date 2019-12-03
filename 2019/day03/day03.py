@@ -8,64 +8,68 @@ def get_lines():
 
 
 def draw_line(array, line):
-    curr_i, curr_j = array.shape[0] // 2, array.shape[1] // 2
     i,j = array.shape[0] // 2, array.shape[1] // 2
-    k = 0
+    array[i][j] = 'o'
+
     for item in line:
-        if item.startswith("R"):
-            while j < (curr_j + int(item[1:])):
-                if k == 0:
-                    array[i][j] = 3
-                    k = 1
+        curr_i, curr_j = i, j
+        if item.startswith("U"):
+            while i > (curr_i - int(item[1:])):
+                if array[i-1][j] == ".":
+                    array[i-1][j] = "|"
                 else:
-                    if array[i][j] == 0:
-                        array[i][j] = 1
-                    elif array[i][j] == 1:
-                        array[i][j] = 2
-                j += 1
+                    array[i-1][j] = "X"
+                i -= 1
+
+        elif item.startswith("D"):
+            while i < (curr_i + int(item[1:])):
+                if array[i+1][j] == ".":
+                    array[i+1][j] = "|"
+                else:
+                    array[i+1][j] = "X"
+                i += 1
                 
         elif item.startswith("L"):
             while j > (curr_j - int(item[1:])):
-                if k == 0:
-                    array[i][j] = 3
-                    k = 1
+                if array[i][j-1] == ".":
+                    array[i][j-1] = "-"
                 else:
-                    if array[i][j] == 0:
-                        array[i][j] = 1
-                    elif array[i][j] == 1:
-                        array[i][j] = 2
+                    array[i][j-1] = "X"
                 j -= 1
-        elif item.startswith("U"):
-            while i < (curr_i + int(item[1:])):
-                if k == 0:
-                    array[i][j] = 3
-                    k = 1
+                        
+        elif item.startswith("R"):
+            while j < (curr_j + int(item[1:])):
+                if array[i][j+1] == ".":
+                    array[i][j+1] = "-"
                 else:
-                    if array[i][j] == 0:
-                        array[i][j] = 1
-                    elif array[i][j] == 1:
-                        array[i][j] = 2
-                i += 1
-        elif item.startswith("D"):
-            while i > (curr_i - int(item[1:])):
-                if k == 0:
-                    array[i][j] = 3
-                    k = 1
-                else:
-                    if array[i][j] == 0:
-                        array[i][j] = 1
-                    elif array[i][j] == 1:
-                        array[i][j] = 2
-                i -= 1
+                    array[i][j+1] = "X"
+                j += 1
+              
+
     return array
 
 
 def get_part1():
-    array = numpy.zeros((20, 20), dtype=int)
+    shape = (20, 20)
+    array = numpy.empty(shape, dtype=object)
+    array.tostring()
+    array[:] = "."
+
     line1, line2 = get_lines()
     array = draw_line(array, line1)
     array = draw_line(array, line2)
-    numpy.savetxt("output.txt", X=array.astype(int), fmt='%i')
+    numpy.savetxt("output.txt", X=array, fmt="%s")
+
+    min_sum = list()
+    for i in range(shape[0]):
+        for j in range(shape[0]):
+            if array[i][j] == "X":
+                min_sum.append((i, j))
+    
+    o = shape[0] // 2
+    for item in min_sum:
+        print(abs(o - item[0]) + abs(o - item[1]))
+            
 
 
 get_part1()
