@@ -69,7 +69,5 @@ def get_part1():
     o = shape[0] // 2
     for item in min_sum:
         print(abs(o - item[0]) + abs(o - item[1]))
-            
-
 
 get_part1()
