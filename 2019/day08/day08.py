@@ -34,17 +34,20 @@ def get_part1():
 
 def get_part2():
     out = list()
-
-    for layer in layers:
-        for i in range(len(layer)):
-            if i == 0:
-                out.append(min(layer[i]))
+    
+    j, l = 0, 0
+    for i in range(len(layers)):
+        if i == 0:
+            out.append(int(layers[i][i][i]))
+        else:
+            if j > 24:
+                j = 0
+                l += 1
             else:
-                out.append(min([layer[k] for k in range(i, 0, -1)]))
-
-    return out
+                out.append(int(min([layers[k][l][j] for k in range(i, 0, -1)])))
+        j += 1
+    return "".join((str(i) for i in out))
 
 layers = process(25, 6)
-
 print("Part 1:", get_part1())
 print("Part 2:", get_part2())
