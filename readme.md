@@ -10,4 +10,4 @@
   
 | Day | Name | Link |
 |---|---|---|
-| Day 1 | Report Repair | [2019/day01/](https://github.com/andhrelja/adventofcode/tree/master/2020/day01) |
+| Day 1 | Report Repair | [2020/day01/](https://github.com/andhrelja/adventofcode/tree/master/2020/day01) |
