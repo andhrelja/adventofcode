@@ -11,4 +11,5 @@
 | Day | Name | Link |
 |---|---|---|
 | [Day 1](https://adventofcode.com/2020/day/1) | Report Repair | [2020/day01/](https://github.com/andhrelja/adventofcode/tree/master/2020/day01) |
-| [Day 2](https://adventofcode.com/2020/day/2) | Password Philosophy | [2020/day01/](https://github.com/andhrelja/adventofcode/tree/master/2020/day01) |
+| [Day 2](https://adventofcode.com/2020/day/2) | Password Philosophy | [2020/day02/](https://github.com/andhrelja/adventofcode/tree/master/2020/day02) |
+| [Day 3](https://adventofcode.com/2020/day/3) | Toboggan Trajectory | [2020/day03/](https://github.com/andhrelja/adventofcode/tree/master/2020/day03) |

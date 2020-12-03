@@ -10,7 +10,6 @@ def read_column(filename='day02.txt'):
         lines = [line.strip() for line in lines]
         return lines
 
-
 def processed_lines(lines):
     processed = list()
     for line in lines:
@@ -31,7 +30,6 @@ def processed_lines(lines):
             'password': password,
         })
     return processed
-
 
 def count_occurance(char, password):
     count = 0
@@ -68,7 +66,7 @@ def part2(processed_lines):
 if __name__ == '__main__':
     lines = read_column()
     processed = processed_lines(lines)
-    
+
     make_valid(processed)
 
     result1 = part1(processed)
