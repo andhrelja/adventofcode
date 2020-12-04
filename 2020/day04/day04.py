@@ -4,7 +4,7 @@ import re
 
 BASE_DIR = Path(__file__).resolve().parent
 DELIMITER = '\n'
-KEYS = [
+KEYS = (
     'byr',
     'iyr',
     'eyr',
@@ -13,7 +13,7 @@ KEYS = [
     'ecl',
     'pid',
     'cid'
-]
+)
 
 VALIDATE = {
     'byr': lambda x: int(x) in range(1920, 2003),
