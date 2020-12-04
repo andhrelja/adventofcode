@@ -16,15 +16,15 @@ KEYS = [
 ]
 
 VALIDATE = {
-    'byr': lambda x: True if int(x) in range(1920, 2003) else False,
-    'iyr': lambda x: True if int(x) in range(2010, 2021) else False,
-    'eyr': lambda x: True if int(x) in range(2020, 2031) else False,
+    'byr': lambda x: int(x) in range(1920, 2003),
+    'iyr': lambda x: int(x) in range(2010, 2021),
+    'eyr': lambda x: int(x) in range(2020, 2031),
     'hgt': lambda x: True if int(x[:-2]) in range(150, 194) and x[-2:] == 'cm' \
                         else True if int(x[:2]) in range(59, 77) and x[2:] == 'in' \
                             else False,
     'hcl': lambda x: bool(re.match('^#([a-f]|[0-9]){6}', x)),
-    'ecl': lambda x: True if x in ('amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth') else False,
-    'pid': lambda x: True if len(x) == 9 else False,
+    'ecl': lambda x: x in ('amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'),
+    'pid': lambda x: len(x) == 9,
     'cid': lambda x: True 
 }
 
