@@ -19,3 +19,4 @@
 | [Day 3](https://adventofcode.com/2020/day/3) | Toboggan Trajectory | [2020/day03.py](https://github.com/andhrelja/adventofcode/tree/master/2020/day03.py) |
 | [Day 4](https://adventofcode.com/2020/day/4) | Passport Processing | [2020/day04.py](https://github.com/andhrelja/adventofcode/tree/master/2020/day04.py) |
 | [Day 5](https://adventofcode.com/2020/day/5) | Binary Boarding | [2020/day05.py](https://github.com/andhrelja/adventofcode/tree/master/2020/day05.py) |
+| [Day 6](https://adventofcode.com/2020/day/6) | Custom Customs | [2020/day06.py](https://github.com/andhrelja/adventofcode/tree/master/2020/day06.py) |
