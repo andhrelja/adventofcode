@@ -13,7 +13,6 @@ def get_bag_name(bag_line, contents):
             return None, None
         else:
             return bag_name[1] + '_' + bag_name[2], int(quantity)
-
     elif isinstance(bag_line, list):
         out = dict()
         for bag in bag_line:
