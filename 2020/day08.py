@@ -1,5 +1,6 @@
 from utils import file_to_list
 
+
 def process_lines(lines):
     out = list()
     for line in lines:
@@ -8,7 +9,6 @@ def process_lines(lines):
         argument = split_line[1].strip()
         out.append([operation, int(argument)])
     return out
-
 
 def part1(lines):
     accumulator = 0
