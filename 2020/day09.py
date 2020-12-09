@@ -10,13 +10,6 @@ def get_preamble_sums(preamble):
         combination_sums.append(sum(comb))
     return combination_sums
 
-def item_invalid(item, preamble):
-    group_sums = get_preamble_sums(preamble)
-    if item not in group_sums:
-        return item
-    else:
-        return None
-
 def part1(lines):
     for i in range(GROUP_SIZE, len(lines), GROUP_SIZE):
         for j in range(i - GROUP_SIZE, i):
