@@ -22,3 +22,4 @@
 | [Day 6](https://adventofcode.com/2020/day/6) | Custom Customs | [2020/day06.py](https://github.com/andhrelja/adventofcode/tree/master/2020/day06.py) |
 | [Day 7](https://adventofcode.com/2020/day/7) | Handy Haversacks | [2020/day07.py](https://github.com/andhrelja/adventofcode/tree/master/2020/day07.py) |
 | [Day 8](https://adventofcode.com/2020/day/8) | Handheld Halting | [2020/day08.py](https://github.com/andhrelja/adventofcode/tree/master/2020/day09.py) |
+| [Day 9](https://adventofcode.com/2020/day/9) | Encoding Error | [2020/day08.py](https://github.com/andhrelja/adventofcode/tree/master/2020/day09.py) |

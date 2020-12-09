@@ -4,7 +4,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 cleaned = lambda x: [i.strip() for i in x]
 
-def file_to_list(filename, test=False, sep=None):
+def file_to_list(filename, test=False, sep=None, cast=None):
     if test:
         filepath = BASE_DIR / 'test_inputs' / filename
     else:
@@ -16,4 +16,9 @@ def file_to_list(filename, test=False, sep=None):
         else:
             lines = f.read()
             lines = lines.split(sep)
-        return cleaned(lines)
+        lines = cleaned(lines)
+        
+        if cast:
+            return list(map(cast, lines))
+        else:
+            return lines
