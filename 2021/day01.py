@@ -9,7 +9,7 @@ def part1(lines):
         if int(lines[i+1]) > previous:
             increases += 1
         
-    print("# of increases:", increases)
+    return increases
 
 def part2(lines):
     outbound = []
@@ -20,13 +20,13 @@ def part2(lines):
             int(lines[i+2]),
         ]
         outbound.append(sum(three_measures))
-    return outbound
+    return part1(outbound)
 
 if __name__ == '__main__':
     lines = file_to_list('day01.txt')
-    print("Part 1:")
-    part1(lines)
-    print()
-    print("Part 2:")
-    new_lines = part2(lines)
-    part1(new_lines)
+    
+    result1 = part1(lines)
+    print("Day 1, part 1:", result1)
+
+    result2 = part2(lines)
+    print("Day 1, part 2:", result2)
