@@ -1,11 +1,10 @@
 from pathlib import Path
 import re
 
-# Incomplete
 
 BASE_DIR = Path(__file__).resolve().parent
 DELIMITER = '\n'
-KEYS = [
+KEYS = (
     'byr',
     'iyr',
     'eyr',
@@ -14,19 +13,19 @@ KEYS = [
     'ecl',
     'pid',
     'cid'
-]
+)
 
 VALIDATE = {
-    'byr': lambda x: True if int(x) in range(1920, 2003) else False,
-    'iyr': lambda x: True if int(x) in range(2010, 2021) else False,
-    'eyr': lambda x: True if int(x) in range(2020, 2031) else False,
+    'byr': lambda x: int(x) in range(1920, 2003),
+    'iyr': lambda x: int(x) in range(2010, 2021),
+    'eyr': lambda x: int(x) in range(2020, 2031),
     'hgt': lambda x: True if int(x[:-2]) in range(150, 194) and x[-2:] == 'cm' \
                         else True if int(x[:2]) in range(59, 77) and x[2:] == 'in' \
                             else False,
-    'hcl': lambda x: bool(re.match('^#([a-f]|[0-9])+', x)),
-    'ecl': lambda x: True if x in ('amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth') else False,
-    'pid': lambda x: True if len(x) == 9 else False,
-    'cid': lambda x: True
+    'hcl': lambda x: bool(re.match('^#([a-f]|[0-9]){6}', x)),
+    'ecl': lambda x: x in ('amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'),
+    'pid': lambda x: len(x) == 9,
+    'cid': lambda x: True 
 }
 
 cleaned = lambda x: [i.strip() for i in x]
@@ -62,34 +61,39 @@ def remake_dictionary(cleaned_input):
             })
     return new_dictionary
 
-def part1(dictionary, validate=False):
+def part1(dictionary):
     count_valid = 0
     for _, attrs in dictionary.items():
         input_keys = list(sorted(attrs.keys()))
         valid_keys = list(sorted(KEYS))
         if 'cid' not in input_keys:
             valid_keys.remove('cid')
-        if not validate and input_keys == valid_keys:
+        if input_keys == valid_keys:
             count_valid += 1
-        elif validate:
+    return count_valid
+
+
+def part2(dictionary):
+    count_valid = 0
+    for _, attrs in dictionary.items():
+        input_keys = list(sorted(attrs.keys()))
+        valid_keys = list(sorted(KEYS))
+        if 'cid' not in input_keys:
+            valid_keys.remove('cid')
+        if input_keys == valid_keys:
             bools = list()
             for key, item in attrs.items():
-                #print(key, item, VALIDATE[key](item))
-                try:
-                    bools.append(VALIDATE[key](item))
-                except ValueError:
+                if key == 'hgt' and not (item.endswith('cm') or item.endswith('in')):
                     bools.append(False)
+                else:
+                    bools.append(VALIDATE[key](item))
             if all(bools):
                 count_valid += 1
     return count_valid
 
 
-def part2(dictionary):
-    return part1(dictionary, validate=True)
-
-
 if __name__ == '__main__':
-    input1 = read_input()
+    input1 = read_input("day04.txt")
     cleaned_input = clean_input(input1)
     new_dictionary = remake_dictionary(cleaned_input)
     
