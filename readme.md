@@ -16,3 +16,9 @@
 | [Day 2](https://adventofcode.com/2020/day/2) | Password Philosophy | [2020/day02/](https://github.com/andhrelja/adventofcode/tree/master/2020/day02) |
 | [Day 3](https://adventofcode.com/2020/day/3) | Toboggan Trajectory | [2020/day03/](https://github.com/andhrelja/adventofcode/tree/master/2020/day03) |
 | [Day 4](https://adventofcode.com/2020/day/4) | Passport Processing | [2020/day04/](https://github.com/andhrelja/adventofcode/tree/master/2020/day04) |
+
+## 2021
+  
+| Day | Name | Link |
+|---|---|---|
+| [Day 1](https://adventofcode.com/2021/day/1) | Sonar Sweep | [2021/day01/](https://github.com/andhrelja/adventofcode/tree/master/2021/day01) |
