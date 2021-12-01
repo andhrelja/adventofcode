@@ -1,10 +1,4 @@
-import re
-
-
-def read_txt(filename='test01-1.txt'):
-    with open(filename, 'r') as f:
-        lines = f.readlines()
-        return [line.strip() for line in lines]
+from utils import file_to_list
 
 def part1(lines):
     increases = 0
@@ -29,7 +23,7 @@ def part2(lines):
     return outbound
 
 if __name__ == '__main__':
-    lines = read_txt('day01.txt')
+    lines = file_to_list('day01.txt')
     print("Part 1:")
     part1(lines)
     print()
