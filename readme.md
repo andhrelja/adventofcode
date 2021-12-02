@@ -31,3 +31,4 @@
 | Day | Name | Link |
 |---|---|---|
 | [Day 1](https://adventofcode.com/2021/day/1) | Sonar Sweep | [2021/day01.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day01.py) |
+| [Day 2](https://adventofcode.com/2021/day/2) | Dive! | [2021/day02.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day02.py) |
