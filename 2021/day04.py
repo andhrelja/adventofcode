@@ -1,4 +1,5 @@
 from utils import file_to_list
+import copy
 
 def get_deserialized_lines(lines):
     numbers_to_draw = lines.pop(0).split(",")
@@ -39,7 +40,7 @@ def is_winner(drawn_nums, matrix):
             return True
     return False
 
-def get_part1_solution(drawn_nums, matrix):
+def get_solution(drawn_nums, matrix):
     unmarked_sum = 0
     for mat_row in matrix:
         for row_num in mat_row:
@@ -65,13 +66,31 @@ def part1(nums, matrices):
     nums_subset = nums[:min_subset_items]
     
     winner = False
-    while winner is False and min_subset_items < len(nums):
+    while winner is False:
         nums_subset.append(nums[min_subset_items])
-        for matrix in matrices:
+        for i, matrix in enumerate(matrices):
             winner = is_winner(nums_subset, matrix)
+            if winner:
+                break
         min_subset_items += 1
-    print_winner(nums_subset, matrix)
-    return get_part1_solution(nums_subset, matrix)
+    return get_solution(nums_subset, matrix)
+
+def part2(nums, matrices):
+    min_subset_items = 5
+    nums_subset = nums[:min_subset_items]
+    
+    winners = []
+    winner = False
+    
+    while min_subset_items < len(nums):
+        nums_subset.append(nums[min_subset_items])
+        for i, matrix in enumerate(matrices):
+            winner = is_winner(nums_subset, matrix)
+            if winner and i not in (item[0] for item in winners):
+                winners.append((i, matrix, copy.deepcopy(nums_subset)))
+                winner = False
+        min_subset_items += 1
+    return get_solution(winners[-1][2], winners[-1][1])
 
 if __name__ == '__main__':
     lines = file_to_list('day04.txt', test=False)
@@ -80,5 +99,5 @@ if __name__ == '__main__':
     result1 = part1(nums, matrices)
     print("Day 4, part 1:", result1)
     
-    #result2 = part2(lines, lines)
-    #print("Day 4, part 2:", result2)    
+    result2 = part2(nums, matrices)
+    print("Day 4, part 2:", result2)

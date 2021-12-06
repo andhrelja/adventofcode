@@ -27,11 +27,9 @@ def part1(max_axis, directions):
     )
     
     for direction in directions:
-        x1 = direction['from'][0]
-        x2 = direction['to'][0]
+        x1, y1 = direction['from']
+        x2, y2 = direction['to']
         
-        y1 = direction['from'][1]
-        y2 = direction['to'][1]
         # x1 == x2
         if x1 == x2:
             vertical_direction = range(y1, y2+1) if y1 <= y2 else range(y1, y2-1, -1)
@@ -47,15 +45,13 @@ def part1(max_axis, directions):
 
 def part2(board, directions):
     for direction in directions:
-        x1 = direction['from'][0]
-        x2 = direction['to'][0]
+        x1, y1 = direction['from']
+        x2, y2 = direction['to']
         
-        y1 = direction['from'][1]
-        y2 = direction['to'][1]
         # 1,1 -> 3,3
         if x1 == y1 and x2 == y2:
-            left_diagonal = range(x1, y2+1) if x1 <= y2 else range(y2, x1-1, -1)
-            for xy in left_diagonal:
+            diagonal = range(x1, y2+1) if x1 <= y2 else range(y2, x1-1, -1)
+            for xy in diagonal:
                 board[xy][xy] += 1
         # 9,7 -> 7,9
         elif x1 == y2 and x2 == y1:
@@ -66,17 +62,23 @@ def part2(board, directions):
                 for i in range(0, (x1-y1)+1):
                     board[x1-i][y1+i] += 1
         elif not x1 == x2 and not y1 == y2:
-            max_xy1 = max(x1, y1)
-            max_xy2 = max(x2, y2)
-            
-            if max_xy1 >= max_xy2:
-                for i in range(0, (max_xy1 - max_xy2)+1):
-                    board[x1-i][y1-i] += 1
+            if x1 > x2:
+                line = range((x1 - x2)+1)
+                if y1 > y2:
+                    for i in line:
+                        board[x1-i][y1-i] += 1
+                else:
+                    for i in line:
+                        board[x1-i][y1+i] += 1
             else:
-                for i in range(0, (max_xy2 - max_xy1)+1):
-                    board[x1-i][y1+i] += 1
-            
-    #print(board)
+                line = range((x2 - x1)+1)
+                if y1 > y2:
+                    for i in line:
+                        board[x1+i][y1-i] += 1
+                else:
+                    for i in line:
+                        board[x1+i][y1+i] += 1
+    
     return np.count_nonzero(board > 1)    
     
 
@@ -88,5 +90,5 @@ if __name__ == '__main__':
     print("Day 5, part 1:", result1)
     
     result2 = part2(board, lines)
-    print("Day 5, part 2:", result2)    
+    print("Day 5, part 2:", result2)
     
