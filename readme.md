@@ -36,3 +36,4 @@
 | [Day 4](https://adventofcode.com/2021/day/4) | Giant Squid | [2021/day04.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day04.py) |
 | [Day 5](https://adventofcode.com/2021/day/5) | Hydrothermal Venture | [2021/day05.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day05.py) |
 | [Day 6](https://adventofcode.com/2021/day/6) | Lanternfish  | [2021/day06.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day06.py) |
+| [Day 7](https://adventofcode.com/2021/day/7) | The Treachery of Whales  | [2021/day07.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day07.py) |

@@ -118,3 +118,45 @@ for direction in input_directions:
                     matrix[x1+i][y1+i] = direction['value']
         
 print(matrix)
+
+"""
+if x1 == x2:
+    # vertical
+    if y1 > y2:
+        # right - left
+    else:
+        # left - right
+    
+elif y1 == y2:
+    # horizontal
+    if x1 > x2:
+        # down - up
+    else:
+        # up - down
+    
+elif x1 == y1 and x2 == y2: # (0, 0) -> (9, 9)
+    # main diagonal
+    if x1 > x2:
+        # right - left
+    else:
+        # left - right
+    
+elif x1 == y2 and x2 == y1: # (0, 9) -> (9, 0)
+    # main diagonal 
+    if x1 > x2:
+        # right - left
+    else:
+        # left - right
+    
+else:
+    if x1 > x2:
+        if y1 > y2:
+            # southeast -> northwest
+        else:
+            # southwest -> northeast
+    else:
+        if y1 > y2:
+            # northeast -> southwest
+        else:
+            # nortwest -> southeast
+"""
