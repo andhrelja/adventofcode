@@ -3,5 +3,5 @@
 __pycache__/
 
 help/
-out.json
-base.py
+create_today.py
+2021/day08.py
