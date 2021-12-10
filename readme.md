@@ -39,3 +39,4 @@
 | [Day 7](https://adventofcode.com/2021/day/7) | The Treachery of Whales  | [2021/day07.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day07.py) |
 | [Day 8](https://adventofcode.com/2021/day/8) | Seven Segment Search  | [2021/day08.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day08.py) |
 | [Day 9](https://adventofcode.com/2021/day/9) | Smoke Basin  | [2021/day09.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day09.py) |
+| [Day 10](https://adventofcode.com/2021/day/10) | Syntax Scoring  | [2021/day10.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day10.py) |

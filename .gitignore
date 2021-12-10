@@ -3,5 +3,5 @@
 __pycache__/
 
 help/
+old/
 create_today.py
-2021/day08.py
