@@ -11,7 +11,7 @@ def file_to_list(filename, test=False, sep=None, cast=None):
         filepath = BASE_DIR / 'inputs' / filename
     
     with open(filepath, 'r') as f:
-        if not sep:
+        if sep is None:
             lines = f.readlines()
         else:
             lines = f.read()

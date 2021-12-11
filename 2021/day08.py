@@ -31,11 +31,11 @@ def get_deserialized_lines(lines: list):
     return deserialized
 
 def _get_most_common_char(new_number_alignments: dict):
-    print(new_number_alignments.values())
+    #print(new_number_alignments.values())
     new_number_alignments = np.transpose(np.array(list(new_number_alignments.values())))
-    for align in new_number_alignments:
+    for i, align in enumerate(new_number_alignments):
         alignment_counter = Counter(align).most_common()
-        print(alignment_counter)
+        #print(i, alignment_counter)
     
 
 def _get_new_number_alignment(digit: str, number: int):
