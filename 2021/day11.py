@@ -28,7 +28,6 @@ def mark_adjacent(lines, i, j, glows):
         
     return glows
 
-
 def part1(lines, num_steps=100):
     glow_count = 0
     for _ in range(num_steps):
