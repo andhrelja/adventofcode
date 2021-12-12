@@ -63,8 +63,7 @@ def part2(lines):
 if __name__ == '__main__':
     lines = file_to_list('day11.txt', test=False)
     lines = [list(map(int, list(line))) for line in lines]
-    
-    
+        
     result1 = part1(copy.deepcopy(lines))
     print("Day 11, part 1:", result1)
     
