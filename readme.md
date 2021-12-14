@@ -41,3 +41,5 @@
 | [Day 9](https://adventofcode.com/2021/day/9) | Smoke Basin  | [2021/day09.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day09.py) |
 | [Day 10](https://adventofcode.com/2021/day/10) | Syntax Scoring  | [2021/day10.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day10.py) |
 | [Day 11](https://adventofcode.com/2021/day/11) | Dumbo Octopus  | [2021/day11.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day11.py) |
+| [Day 13](https://adventofcode.com/2021/day/13) | Transparent Origami  | [2021/day13.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day13.py) |
+| [Day 14](https://adventofcode.com/2021/day/14) | Extended Polymerization  | [2021/day14.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day14.py) |

@@ -17,6 +17,7 @@ NUMBERS_ALIGNMENT = {
 }
 
 get_serialized_alignment = lambda alignment, num: "".join(list(filter(None, alignment[num])))
+get_serialized1_alignment = lambda alignment, num: "".join([char if char is not None else "_" for char in alignment[num]])
 
 
 def get_deserialized_lines(lines: list):
@@ -30,12 +31,19 @@ def get_deserialized_lines(lines: list):
         })
     return deserialized
 
-def _get_most_common_char(new_number_alignments: dict):
-    #print(new_number_alignments.values())
-    new_number_alignments = np.transpose(np.array(list(new_number_alignments.values())))
+def _get_most_common_char(new_number_alignments: list):
+    most_common_chars = []
+    #print(num)
+    new_number_alignments = np.transpose(np.array(new_number_alignments))
+    #print(new_number_alignments)
     for i, align in enumerate(new_number_alignments):
-        alignment_counter = Counter(align).most_common()
+        alignment_counter = Counter(list(filter(None, align))).most_common()
+        if alignment_counter:
+            most_common_chars.append(alignment_counter[0][0])
+        else:
+            most_common_chars.append(None)
         #print(i, alignment_counter)
+    return np.transpose(np.array(most_common_chars))
     
 
 def _get_new_number_alignment(digit: str, number: int):
@@ -65,23 +73,35 @@ def part1(lines: list):
 
 def part2(lines: list):
     easy_keys = (1, 4, 7, 8)
-    hard_keys = (0, 2, 3, 5, 6, 9)
     for item in lines:
         new_number_alignments = {}
-        for digit in item['input'] + item['output']:
+        for digit in item['input']:
             for number in easy_keys:
                 number_alignment = get_serialized_alignment(NUMBERS_ALIGNMENT, number)
                 if len(number_alignment) == len(digit):
                     number_alignment = _get_new_number_alignment(digit, number)
                     new_number_alignments[number] = number_alignment
         
+        search_most_common = [
+            new_number_alignments[1],
+            new_number_alignments[4],
+            new_number_alignments[7]
+        ]
+        most_common_chars = _get_most_common_char(search_most_common)
+        most_common_chars[4] = new_number_alignments[8][4]
+        most_common_chars[6] = new_number_alignments[8][6]
+        print(most_common_chars)
+        
         for num in NUMBERS_ALIGNMENT.keys():
-            if num in new_number_alignments.keys():
-                _get_most_common_char(new_number_alignments)
+            if num != 8 and num in new_number_alignments.keys():                
                 alignment = get_serialized_alignment(new_number_alignments, num)
+                alignment1 = get_serialized1_alignment(new_number_alignments, num)
             else:
+                most_common_chars = NUMBERS_ALIGNMENT[num]
                 alignment = get_serialized_alignment(NUMBERS_ALIGNMENT, num)
-            print(num, alignment)
+                alignment1 = get_serialized1_alignment(NUMBERS_ALIGNMENT, num)
+            #print(num, alignment1, len(alignment))
+            
         #print(new_number_alignments, end="\n\n")
         print()
     return #new_number_alignments
