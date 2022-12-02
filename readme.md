@@ -43,3 +43,11 @@
 | [Day 11](https://adventofcode.com/2021/day/11) | Dumbo Octopus  | [2021/day11.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day11.py) |
 | [Day 13](https://adventofcode.com/2021/day/13) | Transparent Origami  | [2021/day13.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day13.py) |
 | [Day 14](https://adventofcode.com/2021/day/14) | Extended Polymerization  | [2021/day14.py](https://github.com/andhrelja/adventofcode/tree/master/2021/day14.py) |
+
+
+## 2022
+
+| Day | Name | Link |
+|---|---|---|
+| [Day 1](https://adventofcode.com/2022/day/1) | Calorie Counting | [2022/day01.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day01.py) |
+| [Day 2](https://adventofcode.com/2022/day/2) | Rock Paper Scissors | [2022/day02.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day02.py) |
