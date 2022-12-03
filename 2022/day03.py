@@ -1,8 +1,8 @@
 from utils import file_to_list
 
 
-get_priority = lambda x: ord(x) - ord('a') + 1 \
-    if x.islower() else ord(x) - ord('A') + 27
+get_priority = lambda x: ord(x) - ord('a') + 1 if x.islower() \
+    else ord(x) - ord('A') + 27
 
 
 def get_intersect(main_item, *args):
