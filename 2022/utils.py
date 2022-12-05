@@ -2,9 +2,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
-cleaned = lambda x: [i.strip() for i in x]
+stripped = lambda x: [i.strip() for i in x]
 
-def file_to_list(filename, test=False, sep=None, cast=None):
+def file_to_list(filename, test=False, sep=None, cast=None, strip=True):
     if test:
         filepath = BASE_DIR / 'test_inputs' / filename
     else:
@@ -16,7 +16,8 @@ def file_to_list(filename, test=False, sep=None, cast=None):
         else:
             lines = f.read()
             lines = lines.split(sep)
-        lines = cleaned(lines)
+        if strip:
+            lines = stripped(lines)
         
         if cast:
             return list(map(cast, lines))
