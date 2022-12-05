@@ -52,3 +52,4 @@
 | [Day 1](https://adventofcode.com/2022/day/1) | Calorie Counting | [2022/day01.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day01.py) |
 | [Day 2](https://adventofcode.com/2022/day/2) | Rock Paper Scissors | [2022/day02.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day02.py) |
 | [Day 3](https://adventofcode.com/2022/day/3) | Rucksack Reorganization | [2022/day03.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day03.py) |
+| [Day 4](https://adventofcode.com/2022/day/4) | Camp Cleanup | [2022/day04.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day04.py) |
