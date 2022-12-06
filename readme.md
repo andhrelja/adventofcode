@@ -53,4 +53,4 @@
 | [Day 2](https://adventofcode.com/2022/day/2) | Rock Paper Scissors | [2022/day02.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day02.py) |
 | [Day 3](https://adventofcode.com/2022/day/3) | Rucksack Reorganization | [2022/day03.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day03.py) |
 | [Day 4](https://adventofcode.com/2022/day/4) | Camp Cleanup | [2022/day04.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day04.py) |
-| [Day 5](https://adventofcode.com/2022/day/5) | Supply Stacks | [2022/day05.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day05.py) |
+| [Day 6](https://adventofcode.com/2022/day/6) | Tuning Trouble | [2022/day06.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day06.py) |
