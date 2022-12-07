@@ -68,8 +68,7 @@ def get_input(lines):
             
         if line.startswith('$ cd') and line != '$ cd ..':
             ls = False
-            dir_name = line.replace('$ cd', '').strip()
-            new_node = Directory(dir_name, parent=node)           
+            new_node = Directory(line.replace('$ cd', '').strip(), parent=node)           
             node.add_child(new_node)
             node = new_node
         
