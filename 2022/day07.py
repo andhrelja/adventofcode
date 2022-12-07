@@ -79,7 +79,7 @@ def get_input(lines):
 
 
 if __name__ == '__main__':
-    lines = file_to_list('day07.txt', test=True)[1:]
+    lines = file_to_list('day07.txt', test=False)[1:]
     root = get_input(lines)
     
     part1 = 100_000
