@@ -29,7 +29,10 @@ class Node:
 
 class Directory(Node):
     def __str__(self):
-        children_str = '\n'.join(('{}{}'.format('  '*child.get_height(), child) for child in sorted(self.children, key=lambda x: x.name)))
+        children_str = '\n'.join(
+            ('{}{}'.format('  '*child.get_height(), child) 
+            for child in sorted(self.children, key=lambda x: x.name))
+        )
         return '- {} (dir)\n{}'.format(self.name, children_str)
 
 
