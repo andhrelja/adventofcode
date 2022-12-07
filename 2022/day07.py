@@ -5,8 +5,8 @@ class Node:
     def __init__(self, name, parent=None, size=0):
         self.name = name
         self.parent = parent
-        self._size = size
         self.children = []
+        self._size = size
     
     @property
     def size(self):
