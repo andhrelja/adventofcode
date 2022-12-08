@@ -55,4 +55,4 @@
 | [Day 4](https://adventofcode.com/2022/day/4) | Camp Cleanup | [2022/day04.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day04.py) |
 | [Day 6](https://adventofcode.com/2022/day/6) | Tuning Trouble | [2022/day06.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day06.py) |
 | [Day 7](https://adventofcode.com/2022/day/7) | No Space Left On Device | [2022/day07.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day07.py) |
-
+| [Day 8](https://adventofcode.com/2022/day/8) | Treetop Tree House | [2022/day08.py](https://github.com/andhrelja/adventofcode/tree/master/2022/day08.py) |
