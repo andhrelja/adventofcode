@@ -21,7 +21,6 @@ get_adjecent = lambda i, j, lines: [
 ]
 
 def part1(lines):
-    lines = np.array(lines)
     edges = get_edges(lines)
     visible = 0
     for i in range(1, len(lines)-1):
@@ -37,7 +36,6 @@ def part1(lines):
 
 
 def part2(lines):
-    lines = np.array(lines)
     all_scores = []
     for i in range(1, len(lines)-1):
         for j in range(1, len(lines[i])-1):
@@ -55,10 +53,9 @@ def part2(lines):
     return max(all_scores, key=lambda x: x[1])
 
 
-
 if __name__ == '__main__':
     lines = file_to_list('day08.txt', test=False)
-    lines = [list(map(int, (c for c in line))) for line in lines]
+    lines = np.array([list(map(int, (c for c in line))) for line in lines])
     
     result1 = part1(lines)
     print("Day 8, part 1:", result1)
