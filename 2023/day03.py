@@ -103,8 +103,7 @@ def part2(lines):
 
 
 if __name__ == '__main__':
-    lines = file_to_list('day03.txt', test=True, _map=serialize_input)
-    lines = list(lines)
+    lines = file_to_list('day03.txt', test=False, _map=serialize_input)
     lines = apply_padding(list(lines))
     
     result1 = part1(lines)
