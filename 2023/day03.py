@@ -17,30 +17,18 @@ adjacent_neighbours = lambda i, j, lines: [
     lines[i+1][j], # e
 ]
 
-
+padding = 1
 get_neighbours = lambda i, j, lines: [
-    *_get_distinct_neighbours(lines[ i-1 ][ j-1 : j+2 ]),
-    *_get_distinct_neighbours(lines[ i+1 ][ j-1 : j+2 ]),
-    *_get_distinct_neighbours(lines[  i  ][ j+1 : j+2 ]),
-    *_get_distinct_neighbours(lines[  i  ][ j-1 :  j  ]),
+    *get_distinct_neighbours(lines[ i-1 ][ j-1 : j+2 ]), # nw, n, ne
+    *get_distinct_neighbours(lines[ i+1 ][ j-1 : j+2 ]), # sw, s, se
+    *get_distinct_neighbours(lines[  i  ][ j+1 : j+2 ] + [-1]), # e
+    *get_distinct_neighbours(lines[  i  ][ j-1 :  j  ] + [-1]), # w
 ]
 
-def _get_distinct_neighbours(neighbours):
-    if not -1 in neighbours:
-        return tuple(set(neighbours))
-    
-    l_n, r_n = set(), set()
-    for i in neighbours:
-        if i == -1:
-            break
-        if i > 0:
-            l_n.add(i)
-    for i in reversed(neighbours):
-        if i == -1:
-            break
-        if i > 0:
-            r_n.add(i)
-    return (*l_n, *r_n)
+def get_distinct_neighbours(neighbours):
+    if neighbours[1] == -1:
+        return (*list(neighbours),)
+    return (*set(neighbours),)
 
 
 def _stream_list(lst):
@@ -82,39 +70,45 @@ def serialize_input(line):
 
 
 def apply_padding(lines):
-    cols, rows = [-1], [-1] * (len(lines[0]) + 2)
-    padded = [cols + lines[i] + cols 
+    cols, rows = [-1], [-1] * (len(lines[0]) + padding * 2)
+    padded = [(cols * padding) + lines[i] + (cols * padding)
               for i in range(len(lines))]
-    padded = [rows] + padded + [rows]
+    padded = ([rows] * padding) + padded + ([rows] * padding)
     return padded
 
 
 def part1(lines):
     summation = []
-    d = False
-    for i in range(1, len(lines)-1):
-        for j in range(1, len(lines[i])-1):
+    for i in range(padding, len(lines) - padding):
+        for j in range(padding, len(lines[i]) - padding):
             if lines[i][j] == 0:
-                neighbours = (
-                    *diagonal_neighbours(i, j, lines), 
-                    *adjacent_neighbours(i, j, lines))
-
-                # print('({}, {}): {}'.format(i, j, lines[i][j]))
-                # print(neighbours)
-                summation += list(filter(lambda x: x != -1, neighbours))
+                neighbours = list(
+                    filter(lambda x: x != -1, 
+                           get_neighbours(i, j, lines)))
+                summation += neighbours
     return summation
 
 
 def part2(lines):
-    pass
+    summation = 0
+    for i in range(padding, len(lines) - padding):
+        for j in range(padding, len(lines[i]) - padding):
+            if lines[i][j] == 0:
+                neighbours = list(
+                    filter(lambda x: x != -1, 
+                           get_neighbours(i, j, lines)))
+                if len(neighbours) == 2:
+                    summation += np.prod(neighbours)
+    return summation
 
 
 if __name__ == '__main__':
     lines = file_to_list('day03.txt', test=True, _map=serialize_input)
+    lines = list(lines)
     lines = apply_padding(list(lines))
     
     result1 = part1(lines)
     print("Day 3, part 1:", sum(result1))
     
-    # result2 = part2(lines)
-    # print("Day 3, part 2:", result2)
+    result2 = part2(lines)
+    print("Day 3, part 2:", result2)
