@@ -16,8 +16,13 @@ def serialize_input(line):
 def part1(lines):
     summation = 0
     for item in lines:
+        points = 0
         intersect = set(item['winning_numbers']).intersection(item['owning_numbers'])
-        summation += 2 ** len(intersect)
+        if len(intersect) == 1:
+            points = 1
+        if len(intersect) > 1:
+            points = 2 ** (len(intersect) - 1)
+        summation += points
     return summation
 
 
@@ -27,11 +32,11 @@ def part2(lines):
 
 
 if __name__ == '__main__':
-    lines = file_to_list('day04.txt', test=True, _map=serialize_input)
+    lines = file_to_list('day04.txt', test=False, _map=serialize_input)
     lines = list(lines)
         
     result1 = part1(lines)
-    print("Day 2, part 1:", result1)
+    print("Day 4, part 1:", result1)
     
     # result2 = part2(lines)
     # print("Day 2, part 2:", result2)
