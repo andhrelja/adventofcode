@@ -64,4 +64,5 @@
 |---|---|---|
 | [Day 1](https://adventofcode.com/2023/day/1) | Trebuchet?! | [2023/day01.py](https://github.com/andhrelja/adventofcode/tree/master/2023/day01.py) |
 | [Day 2](https://adventofcode.com/2023/day/2) | Cube Conundrum | [2023/day02.py](https://github.com/andhrelja/adventofcode/tree/master/2023/day02.py) |
-| [Day 3](https://adventofcode.com/2023/day/3) | Gear Ratios  | [2023/day03.py](https://github.com/andhrelja/adventofcode/tree/master/2023/day03.py) |
+| [Day 3](https://adventofcode.com/2023/day/3) | Gear Ratios | [2023/day03.py](https://github.com/andhrelja/adventofcode/tree/master/2023/day03.py) |
+| [Day 4](https://adventofcode.com/2023/day/4) | Scratchcards | [2023/day04.py](https://github.com/andhrelja/adventofcode/tree/master/2023/day04.py) |
