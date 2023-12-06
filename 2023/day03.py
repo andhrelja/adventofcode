@@ -2,21 +2,6 @@ from utils import file_to_list
 import string
 import numpy as np
 
-
-diagonal_neighbours = lambda i, j, lines: [
-    lines[i-1][j-1], # nw
-    lines[i-1][j+1], # ne
-    lines[i+1][j-1], # sw
-    lines[i+1][j+1], # se
-]
-
-adjacent_neighbours = lambda i, j, lines: [
-    lines[i][j-1], # n
-    lines[i][j+1], # s
-    lines[i-1][j], # w
-    lines[i+1][j], # e
-]
-
 padding = 1
 get_neighbours = lambda i, j, lines: [
     *get_distinct_neighbours(lines[ i-1 ][ j-1 : j+2 ]), # nw, n, ne

@@ -60,11 +60,10 @@ def part2(lines):
 
 
 if __name__ == '__main__':
-    lines = file_to_list('day01-1.txt', test=False)
+    lines = file_to_list('day01.txt', test=False)
         
     result1 = part1(lines)
     print("Day 1, part 1:", result1)
     
-    lines = file_to_list('day01-2.txt', test=False) 
     result2 = part2(lines)
     print("Day 1, part 2:", result2)
