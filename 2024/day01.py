@@ -11,20 +11,19 @@ def serialize_input(lines, _map=int):
 
 
 def part1(lines):
-    dists = []
+    dist = 0
     left, right = serialize_input(lines)
     for l, r in zip(sorted(left), sorted(right)):
-        dists.append(abs(l - r))
-    return sum(dists)
+        dist += abs(l - r)
+    return dist
 
 
 def part2(lines):
-    sims = []
+    sim = 0
     left, right = map("".join, serialize_input(lines, _map=str))
     for l in left:
-        sim = right.count(l)
-        sims.append(sim * int(l))
-    return sum(sims)
+        sim += right.count(l) * int(l)
+    return sim
 
 
 if __name__ == "__main__":
