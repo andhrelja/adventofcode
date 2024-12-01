@@ -66,3 +66,11 @@
 | [Day 2](https://adventofcode.com/2023/day/2) | Cube Conundrum | [2023/day02.py](https://github.com/andhrelja/adventofcode/tree/master/2023/day02.py) |
 | [Day 3](https://adventofcode.com/2023/day/3) | Gear Ratios | [2023/day03.py](https://github.com/andhrelja/adventofcode/tree/master/2023/day03.py) |
 | [Day 4](https://adventofcode.com/2023/day/4) | Scratchcards | [2023/day04.py](https://github.com/andhrelja/adventofcode/tree/master/2023/day04.py) |
+| [Day 5](https://adventofcode.com/2023/day/5) | If You Give A Seed A Fertilizer | [2023/day05.py](https://github.com/andhrelja/adventofcode/tree/master/2023/day05.py) |
+
+
+## 2024
+
+| Day | Name | Link |
+|---|---|---|
+| [Day 1](https://adventofcode.com/2024/day/1) | Historian Hysteria | [2024/day01.py](https://github.com/andhrelja/adventofcode/tree/master/2024/day01.py) |
